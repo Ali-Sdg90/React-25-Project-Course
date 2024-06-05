@@ -1,11 +1,13 @@
 import React from "react";
 import P1 from "./Projects/P1/P1";
+import P2 from "./Projects/P2/P2";
 
 const App = () => {
     return (
-        <div>
+        <>
             <P1 />
-        </div>
+            <P2 />
+        </>
     );
 };
 

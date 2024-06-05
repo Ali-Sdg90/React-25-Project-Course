@@ -4,7 +4,7 @@ body {
     font-family: sans-serif;
 }
 
-body > div {
+body > div > div {
     border: 1px solid rgb(158, 158, 158);
     background-color: #222;
     border-radius: 6px;
