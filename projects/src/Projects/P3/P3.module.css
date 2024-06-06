@@ -1,0 +1,33 @@
+.container {
+    height: 200px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.star {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.input {
+    width: 28px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 50%;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./P2.css";
+import Style from "./P2.module.css";
 
 const P2 = () => {
     const [isHexMode, setIsHexMode] = useState(true);
@@ -52,7 +52,7 @@ const P2 = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className={Style.container}>
             <div>
                 <button
                     disabled={isHexMode}
@@ -76,7 +76,10 @@ const P2 = () => {
                 Create Random {isHexMode ? "HEX" : "RGB"} Color
             </button>
 
-            <div className="color-div" style={{ backgroundColor: randomColor }}>
+            <div
+                className={Style.colorDiv}
+                style={{ backgroundColor: randomColor }}
+            >
                 <div>{randomColor}</div>
             </div>
         </div>

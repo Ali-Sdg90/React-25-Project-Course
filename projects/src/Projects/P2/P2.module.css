@@ -6,11 +6,11 @@
     align-items: center;
 }
 
-button{
+button {
     padding: 5px 10px;
 }
 
-.color-div {
+.colorDiv {
     width: 100%;
     height: 100%;
     display: flex;
