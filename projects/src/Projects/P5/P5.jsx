@@ -90,7 +90,7 @@ const P5 = () => {
                     Page {pageNumber} / {numberOfPages}
                 </div>
                 <button
-                    disabled={pageNumber === numberOfPages - 1}
+                    disabled={pageNumber === numberOfPages}
                     onClick={() => setPageNumber((prevState) => prevState + 1)}
                 >
                     &gt;
