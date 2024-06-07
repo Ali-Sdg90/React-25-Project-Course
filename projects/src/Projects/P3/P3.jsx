@@ -34,13 +34,12 @@ const P3 = () => {
         return starts;
     };
 
-    const resetStars = () => {
-        setNumberOfStarts(savedStarNumber);
-    };
-
     return (
         <div className={Style.container}>
-            <div className={Style.stars} onMouseLeave={resetStars}>
+            <div
+                className={Style.stars}
+                onMouseLeave={() => setNumberOfStarts(savedStarNumber)}
+            >
                 {addStarts()}
             </div>
             <input

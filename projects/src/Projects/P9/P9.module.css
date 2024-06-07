@@ -1,0 +1,27 @@
+.container input {
+    width: 32px;
+}
+
+.container .tabInput {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.container > .tabs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.container > .tabs > div {
+    border: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
