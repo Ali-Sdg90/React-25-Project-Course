@@ -1,0 +1,30 @@
+.container {
+    background-color: black;
+    color: white;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.container button {
+    background-color: white;
+    color: black;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.light button {
+    background-color: black;
+    color: white;
+}
+
+.container h1{
+    margin-bottom: 0;
+}
+
+.container pre{
+    margin: 5px 5px 10px;
+}

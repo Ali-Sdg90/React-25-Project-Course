@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container div {
+    display: flex;
+    width: 256px;
+    margin-bottom: 15px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container div input {
+    width: 100%;
+    font-size: 20px;
+}
