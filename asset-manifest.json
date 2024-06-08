@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React-25-Project-Course/static/css/main.5092646d.css",
-    "main.js": "/React-25-Project-Course/static/js/main.9594188d.js",
+    "main.css": "/React-25-Project-Course/static/css/main.cd6eaa50.css",
+    "main.js": "/React-25-Project-Course/static/js/main.f2e6c0a3.js",
     "index.html": "/React-25-Project-Course/index.html",
-    "main.5092646d.css.map": "/React-25-Project-Course/static/css/main.5092646d.css.map",
-    "main.9594188d.js.map": "/React-25-Project-Course/static/js/main.9594188d.js.map"
+    "main.cd6eaa50.css.map": "/React-25-Project-Course/static/css/main.cd6eaa50.css.map",
+    "main.f2e6c0a3.js.map": "/React-25-Project-Course/static/js/main.f2e6c0a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.5092646d.css",
-    "static/js/main.9594188d.js"
+    "static/css/main.cd6eaa50.css",
+    "static/js/main.f2e6c0a3.js"
   ]
 }
