@@ -42,7 +42,11 @@ const P9 = () => {
 
         for (let i = 0; i < noOfTabs; i++) {
             tabs.push(
-                <div className={Style.tabs} onClick={() => setSelectedTab(i)}>
+                <div
+                    key={i}
+                    className={Style.tabs}
+                    onClick={() => setSelectedTab(i)}
+                >
                     Tab {i + 1}
                 </div>
             );

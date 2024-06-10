@@ -46,7 +46,7 @@ const P3 = () => {
                 type="text"
                 value={savedStarNumber + 1}
                 className={Style.input}
-                disabled="true"
+                disabled={true}
             />
         </div>
     );

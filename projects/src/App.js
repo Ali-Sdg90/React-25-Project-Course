@@ -11,6 +11,10 @@ import P9 from "./Projects/P9/P9";
 import P10 from "./Projects/P10/P10";
 import P11 from "./Projects/P11/P11";
 import P12 from "./Projects/P12/P12";
+import P13 from "./Projects/P13/P13";
+import P14 from "./Projects/P14/P14";
+import P15 from "./Projects/P15/P15";
+import P16 from "./Projects/P16/P16";
 
 const App = () => {
     return (
@@ -27,6 +31,10 @@ const App = () => {
             <P10 />
             <P11 />
             <P12 />
+            <P13 />
+            <P14 />
+            <P15 />
+            <P16 />
         </>
     );
 };
