@@ -1,0 +1,30 @@
+.container .recipe {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h4 {
+    margin: 20px 0 16px;
+}
+
+.container ol {
+    list-style: inside decimal;
+    padding-left: 0;
+    max-width: 600px;
+}
+
+.container img {
+    border-radius: 10px;
+}
+
+.container a {
+    text-decoration: none;
+    color: rgb(122, 122, 255);
+    transition: color 0.15s;
+}
+
+.container a:hover {
+    color: rgb(97, 97, 255);
+}

@@ -16,27 +16,52 @@ import P14 from "./Projects/P14/P14";
 import P15 from "./Projects/P15/P15";
 import P16 from "./Projects/P16/P16";
 import P17 from "./Projects/P17/P17";
+import { Route, Routes } from "react-router-dom";
+import P18 from "./Projects/P18/P18";
+import CookingSite from "./Projects/P18/CookingSite";
 
 const App = () => {
     return (
         <>
-            <P1 />
-            <P2 />
-            <P3 />
-            <P4 />
-            <P5 />
-            <P6 />
-            <P7 />
-            <P8 />
-            <P9 />
-            <P10 />
-            <P11 />
-            <P12 />
-            <P13 />
-            <P14 />
-            <P15 />
-            <P16 />
-            <P17 />
+            <Routes>
+                <Route
+                    path="/React-25-Project-Course"
+                    element={
+                        <>
+                            <P1 />
+                            <P2 />
+                            <P3 />
+                            <P4 />
+                            <P5 />
+                            <P6 />
+                            <P7 />
+                            <P8 />
+                            <P9 />
+                            <P10 />
+                            <P11 />
+                            <P12 />
+                            <P13 />
+                            <P14 />
+                            <P15 />
+                            <P16 />
+                            <P17 />
+                            <P18 />
+                        </>
+                    }
+                />
+                <Route
+                    path="/React-25-Project-Course/cooking-site/*"
+                    element={<CookingSite />}
+                />
+                <Route
+                    path="*"
+                    element={
+                        <div>
+                            <h1>Page Not Found!</h1>
+                        </div>
+                    }
+                />
+            </Routes>
         </>
     );
 };

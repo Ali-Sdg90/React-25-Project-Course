@@ -72,7 +72,7 @@ const P17 = () => {
                 )}
             </div>
             <div className={Style.rightSection}>
-                {!isLoading ? (
+                {!isLoading && data && data.coord.lon && data.coord.lat ? (
                     <ShowMap lon={data.coord.lon} lat={data.coord.lat} />
                 ) : null}
             </div>

@@ -1,0 +1,41 @@
+.container .items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .card {
+    width: 250px;
+    height: 260px;
+    border: 1px solid rgb(199, 199, 199);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #333;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.container .card:hover {
+    transform: scale(1.01);
+}
+
+.container .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background-color: white;
+}
+
+.container a {
+    text-decoration: none;
+    color: rgb(122, 122, 255);
+    transition: color 0.15s;
+}
+
+.container a:hover {
+    color: rgb(97, 97, 255);
+}
