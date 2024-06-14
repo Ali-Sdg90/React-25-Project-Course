@@ -15,6 +15,7 @@ import P13 from "./Projects/P13/P13";
 import P14 from "./Projects/P14/P14";
 import P15 from "./Projects/P15/P15";
 import P16 from "./Projects/P16/P16";
+import P17 from "./Projects/P17/P17";
 
 const App = () => {
     return (
@@ -35,6 +36,7 @@ const App = () => {
             <P14 />
             <P15 />
             <P16 />
+            <P17 />
         </>
     );
 };

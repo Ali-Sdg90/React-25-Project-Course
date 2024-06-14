@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.container .inputSection {
+    display: flex;
+    flex-flow: column nowrap;
+    width: max-content;
+}
+
+.container .rightSection {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+}
+
+.container .weatherInfo div {
+    margin-bottom: 4px;
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
