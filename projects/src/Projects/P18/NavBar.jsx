@@ -9,9 +9,6 @@ const NavBar = () => {
         <>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
-                    <Link to={"/React-25-Project-Course"}>
-                        <button>Back to App Main Page</button>
-                    </Link>
                     <Link to={"/React-25-Project-Course/cooking-site/home"}>
                         <button>Cooking Site Main Page</button>
                     </Link>

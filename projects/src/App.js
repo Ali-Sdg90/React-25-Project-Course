@@ -19,10 +19,12 @@ import P17 from "./Projects/P17/P17";
 import { Route, Routes } from "react-router-dom";
 import P18 from "./Projects/P18/P18";
 import CookingSite from "./Projects/P18/CookingSite";
+import AppNavbar from "./Navbar/AppNavbar";
 
 const App = () => {
     return (
         <>
+            <AppNavbar />
             <Routes>
                 <Route
                     path="/React-25-Project-Course"
