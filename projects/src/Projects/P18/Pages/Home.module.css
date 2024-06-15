@@ -39,3 +39,27 @@
 .container a:hover {
     color: rgb(97, 97, 255);
 }
+
+.container .imageSaved {
+    border: 1px solid black;
+    width: 280px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 8px 0;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.container .done {
+    background-color: green;
+}
+.container .loading {
+    background-color: rgb(145, 145, 0);
+}
+.container .loading:after {
+    content: "Please Wait!";
+    display: block;
+    margin: auto;
+    width: 200px;
+    margin-top: 4px;
+}

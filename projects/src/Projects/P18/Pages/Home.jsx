@@ -14,10 +14,12 @@ const Home = () => {
     const option = useMemo(() => ({}), []);
 
     const [siteData, setSiteData] = useState({
-        data:  "",
+        data: "",
         isLoading: true,
         errorMsg: "",
     });
+
+    const [isSavingImageDone, setIsSavingImageDone] = useState(false);
 
     const {
         data: dataFetched,
@@ -41,50 +43,48 @@ const Home = () => {
     };
 
     useEffect(() => {
-        console.log("cookingData", cookingData);
-
-        if (cookingData) {
-            console.log("STORED!");
+        if (dataFetched) {
+            console.log("dataFetched", dataFetched);
 
             setSiteData({
-                data: cookingData,
-                isLoading: false,
-                errorMsg: "",
+                data: dataFetched,
+                isLoading: isLoadingFetched,
+                errorMsg: errorMsgFetched,
             });
-        } else {
-            console.log("FETCHED!");
 
-            if (dataFetched) {
-                console.log("dataFetched", dataFetched);
+            const output = {};
+            setIsSavingImageDone(false);
 
-                console.log("recipes", dataFetched.recipes);
-
-                const fetchImages = async () => {
-                    const dataFetchedWithBase64Images = await Promise.all(
-                        dataFetched.recipes.map(async (item) => {
+            const fetchImages = async () => {
+                await Promise.all(
+                    dataFetched.recipes.map(async (item) => {
+                        if (cookingData && !cookingData[item.recipe_id]) {
                             const base64Image = await getBase64Image(
                                 item.image_url
                             );
-                            return {
-                                ...item,
-                                image_url: base64Image,
-                            };
-                        })
-                    );
 
-                    setSiteData({
-                        data: dataFetchedWithBase64Images,
-                        isLoading: isLoadingFetched,
-                        errorMsg: errorMsgFetched,
-                    });
+                            output[item.recipe_id] = base64Image;
+                        }
+                    })
+                );
 
-                    setCookingData(dataFetchedWithBase64Images);
-                };
+                setCookingData((prevState) => ({
+                    ...prevState,
+                    ...output,
+                }));
 
-                fetchImages();
-            }
+                console.log("DONE CREATE LOCAL IMAGE-OBJ");
+                setIsSavingImageDone(true);
+            };
+
+            fetchImages();
         }
+        // }
     }, [dataFetched, isLoadingFetched, errorMsgFetched]);
+
+    useEffect(() => {
+        // console.log("cookingData", cookingData);
+    }, [cookingData]);
 
     return (
         <div className={Style.container}>
@@ -97,19 +97,48 @@ const Home = () => {
             ) : (
                 <>
                     <h2 style={{ textAlign: "center" }}>
-                        Number of Results: {siteData.data.length}
+                        Number of Results: {siteData.data.count}
+                        <div
+                            className={`${Style.imageSaved} ${
+                                isSavingImageDone ? Style.done : Style.loading
+                            }`}
+                        >
+                            Images Saved:{" "}
+                            {cookingData
+                                ? Object.keys(cookingData).length
+                                : "0"}
+                            /
+                            {(cookingData
+                                ? Object.keys(cookingData).length
+                                : 0) +
+                                (isSavingImageDone ? 0 : siteData.data.count)}
+                        </div>
                     </h2>
 
                     <div className={Style.items}>
                         {console.log("=======>", siteData.data)}
-                        {siteData.data.map((item) => (
+                        {siteData.data.recipes.map((item) => (
                             <Link
                                 key={item.recipe_id}
                                 to={`/React-25-Project-Course/cooking-site/details/${item.recipe_id}`}
                             >
                                 <div className={Style.card}>
+                                    {/* {console.log(cookingData[item.recipe_id])} */}
                                     <img
-                                        src={item.image_url}
+                                        src={
+                                            cookingData &&
+                                            cookingData[item.recipe_id]
+                                                ? (() => {
+                                                      console.log("SAVED");
+                                                      return cookingData[
+                                                          item.recipe_id
+                                                      ];
+                                                  })()
+                                                : (() => {
+                                                      console.log("FETCHED");
+                                                      return item.image_url;
+                                                  })()
+                                        }
                                         alt="item image"
                                     />
                                     <div style={{ padding: " 5px 10px" }}>
@@ -122,7 +151,6 @@ const Home = () => {
                                             <a
                                                 href={item.source_url}
                                                 target="_blank"
-                                                rel="noopener noreferrer"
                                             >
                                                 {item.publisher}
                                             </a>

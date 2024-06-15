@@ -43,8 +43,8 @@ const Details = () => {
                         <h2>Ingredients:</h2>
 
                         <ol>
-                            {data.recipe.ingredients.map((item) => (
-                                <li>{item}</li>
+                            {data.recipe.ingredients.map((item, index) => (
+                                <li key={index}>{item}</li>
                             ))}
                         </ol>
                     </div>
