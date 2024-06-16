@@ -3,10 +3,8 @@ import NavBar from "../NavBar";
 import { cookingContext } from "../Context/Context";
 import useFetchHook from "../../P13/useFetchHook";
 import Style from "./Home.module.css";
-import { Link } from "react-router-dom";
 import { appContext } from "../../../Context/AppContext";
-import { CiStar } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
+import Card from "./Card";
 
 const Home = () => {
     const { search } = useContext(cookingContext);
@@ -85,27 +83,6 @@ const Home = () => {
         // }
     }, [dataFetched, isLoadingFetched, errorMsgFetched]);
 
-    const starClickHandler = (item) => {
-        // const index = Object.keys(favRecipe).indexOf(item.recipe_id);
-
-        if (!(item.recipe_id in favRecipe)) {
-            setFavRecipe((prevState) => ({
-                ...prevState,
-                [item.recipe_id]: item,
-            }));
-        } else {
-            const newFavRecipe = JSON.parse(JSON.stringify(favRecipe));
-
-            delete newFavRecipe[item.recipe_id];
-            setFavRecipe(newFavRecipe);
-        }
-    };
-
-    const preventDefaultBehaviorOfLink = (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-    };
-
     useEffect(() => {
         console.log("favRecipe", favRecipe);
     }, [favRecipe]);
@@ -145,82 +122,9 @@ const Home = () => {
 
                     <div className={Style.items}>
                         {console.log("=======>", siteData.data)}
-                        {siteData.data.recipes.map((item) => (
-                            <Link
-                                key={item.recipe_id}
-                                to={`/React-25-Project-Course/cooking-site/details/${item.recipe_id}`}
-                            >
-                                <div className={Style.card}>
-                                    {/* {console.log(cookingData[item.recipe_id])} */}
-                                    <img
-                                        src={
-                                            cookingData &&
-                                            cookingData[item.recipe_id]
-                                                ? (() => {
-                                                      console.log("SAVED");
-                                                      return cookingData[
-                                                          item.recipe_id
-                                                      ];
-                                                  })()
-                                                : (() => {
-                                                      console.log("FETCHED");
-                                                      return item.image_url;
-                                                  })()
-                                        }
-                                        alt="item image"
-                                    />
-                                    <div style={{ padding: " 5px 10px" }}>
-                                        <div>
-                                            <b>{item.title}</b>
-                                        </div>
-                                        <br />
-                                        <div>
-                                            Publisher:{" "}
-                                            <a
-                                                href={item.source_url}
-                                                target="_blank"
-                                                onClick={(event) =>
-                                                    preventDefaultBehaviorOfLink(
-                                                        event
-                                                    )
-                                                }
-                                            >
-                                                {item.publisher}
-                                            </a>
-                                        </div>
-                                    </div>
-                                    {Object.keys(favRecipe).includes(
-                                        item.recipe_id
-                                    ) ? (
-                                        <FaStar
-                                            className={`${Style.star} ${Style.starYellow}`}
-                                            onClick={(event) => {
-                                                preventDefaultBehaviorOfLink(
-                                                    event
-                                                );
-                                                starClickHandler(item);
-                                            }}
-                                        />
-                                    ) : (
-                                        <CiStar
-                                            className={`${Style.star} ${Style.starBlack}`}
-                                            onClick={(event) => {
-                                                preventDefaultBehaviorOfLink(
-                                                    event
-                                                );
-                                                starClickHandler(item);
-                                            }}
-                                        />
-                                    )}
-                                    {/* <FaStar
-                                        className={`${Style.star} ${Style.starYellow}`}
-                                        onClick={(event) => {
-                                            preventDefaultBehaviorOfLink(event);
-                                            starClickHandler(item);
-                                        }}
-                                    /> */}
-                                </div>
-                            </Link>
+
+                        {siteData.data.recipes.map((item, index) => (
+                            <Card key={index} item={item} />
                         ))}
                     </div>
                 </>
