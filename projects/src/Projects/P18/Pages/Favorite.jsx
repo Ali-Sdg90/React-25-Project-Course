@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavBar from "../NavBar";
+import { appContext } from "../../../Context/AppContext";
 
 const Favorite = () => {
+    const { favRecipe, setFavRecipe } = useContext(appContext);
+
     return (
         <div>
             <NavBar />

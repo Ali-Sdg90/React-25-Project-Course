@@ -1,12 +1,15 @@
-import React, { useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import NavBar from "../NavBar";
 import { useParams } from "react-router-dom";
 import useFetchHook from "../../P13/useFetchHook";
 
 import Style from "./Details.module.css";
+import { appContext } from "../../../Context/AppContext";
 
 const Details = () => {
     const { id } = useParams();
+
+    const { cookingData } = useContext(appContext);
 
     const option = useMemo(() => ({}), []);
 
@@ -28,7 +31,21 @@ const Details = () => {
                     {console.log(data)}
 
                     <h1>{data.recipe.title}</h1>
-                    <img src={data.recipe.image_url} alt="item image" />
+                    {/* <img src={data.recipe.image_url} alt="item image" /> */}
+                    <img
+                        src={
+                            cookingData && cookingData[data.recipe.recipe_id]
+                                ? (() => {
+                                      console.log("SAVED");
+                                      return cookingData[data.recipe.recipe_id];
+                                  })()
+                                : (() => {
+                                      console.log("FETCHED");
+                                      return data.recipe.image_url;
+                                  })()
+                        }
+                        alt="item image"
+                    />
 
                     <h4>
                         Publisher:{" "}

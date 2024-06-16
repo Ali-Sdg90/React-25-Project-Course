@@ -5,11 +5,14 @@ import useFetchHook from "../../P13/useFetchHook";
 import Style from "./Home.module.css";
 import { Link } from "react-router-dom";
 import { appContext } from "../../../Context/AppContext";
+import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
 
 const Home = () => {
     const { search } = useContext(cookingContext);
 
-    const { cookingData, setCookingData } = useContext(appContext);
+    const { cookingData, setCookingData, favRecipe, setFavRecipe } =
+        useContext(appContext);
 
     const option = useMemo(() => ({}), []);
 
@@ -82,6 +85,31 @@ const Home = () => {
         // }
     }, [dataFetched, isLoadingFetched, errorMsgFetched]);
 
+    const starClickHandler = (item) => {
+        // const index = Object.keys(favRecipe).indexOf(item.recipe_id);
+
+        if (!(item.recipe_id in favRecipe)) {
+            setFavRecipe((prevState) => ({
+                ...prevState,
+                [item.recipe_id]: item,
+            }));
+        } else {
+            const newFavRecipe = JSON.parse(JSON.stringify(favRecipe));
+
+            delete newFavRecipe[item.recipe_id];
+            setFavRecipe(newFavRecipe);
+        }
+    };
+
+    const preventDefaultBehaviorOfLink = (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+    };
+
+    useEffect(() => {
+        console.log("favRecipe", favRecipe);
+    }, [favRecipe]);
+
     useEffect(() => {
         // console.log("cookingData", cookingData);
     }, [cookingData]);
@@ -151,11 +179,46 @@ const Home = () => {
                                             <a
                                                 href={item.source_url}
                                                 target="_blank"
+                                                onClick={(event) =>
+                                                    preventDefaultBehaviorOfLink(
+                                                        event
+                                                    )
+                                                }
                                             >
                                                 {item.publisher}
                                             </a>
                                         </div>
                                     </div>
+                                    {Object.keys(favRecipe).includes(
+                                        item.recipe_id
+                                    ) ? (
+                                        <FaStar
+                                            className={`${Style.star} ${Style.starYellow}`}
+                                            onClick={(event) => {
+                                                preventDefaultBehaviorOfLink(
+                                                    event
+                                                );
+                                                starClickHandler(item);
+                                            }}
+                                        />
+                                    ) : (
+                                        <CiStar
+                                            className={`${Style.star} ${Style.starBlack}`}
+                                            onClick={(event) => {
+                                                preventDefaultBehaviorOfLink(
+                                                    event
+                                                );
+                                                starClickHandler(item);
+                                            }}
+                                        />
+                                    )}
+                                    {/* <FaStar
+                                        className={`${Style.star} ${Style.starYellow}`}
+                                        onClick={(event) => {
+                                            preventDefaultBehaviorOfLink(event);
+                                            starClickHandler(item);
+                                        }}
+                                    /> */}
                                 </div>
                             </Link>
                         ))}

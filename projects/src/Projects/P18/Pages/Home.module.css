@@ -17,6 +17,7 @@
     background-color: #333;
     cursor: pointer;
     transition: transform 0.15s;
+    position: relative;
 }
 
 .container .card:hover {
@@ -35,6 +36,11 @@
     color: rgb(122, 122, 255);
     transition: color 0.15s;
 }
+
+/* .container b {
+    max-width: 200px !important;
+    display: inline-block;
+} */
 
 .container a:hover {
     color: rgb(97, 97, 255);
@@ -56,10 +62,35 @@
 .container .loading {
     background-color: rgb(145, 145, 0);
 }
-.container .loading:after {
+/* .container .loading:after {
     content: "Please Wait!";
     display: block;
     margin: auto;
     width: 200px;
     margin-top: 4px;
+} */
+
+.container .star {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 0 4px;
+    transition: background-color 0.15s;
+}
+.container .star:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.container .star:active {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container .starYellow {
+    color: rgb(255, 238, 0);
+    width: 26px;
+    height: 26px;
+    padding: 2px;
 }
