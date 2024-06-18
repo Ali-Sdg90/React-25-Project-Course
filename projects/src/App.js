@@ -20,6 +20,7 @@ import { Route, Routes } from "react-router-dom";
 import P18 from "./Projects/P18/P18";
 import CookingSite from "./Projects/P18/CookingSite";
 import AppNavbar from "./Navbar/AppNavbar";
+import P19 from "./Projects/P19/P19";
 
 const App = () => {
     return (
@@ -48,6 +49,7 @@ const App = () => {
                             <P16 />
                             <P17 />
                             <P18 />
+                            <P19 />
                         </>
                     }
                 />
