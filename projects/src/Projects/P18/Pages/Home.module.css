@@ -38,11 +38,6 @@
     transition: color 0.15s;
 }
 
-/* .container b {
-    max-width: 200px !important;
-    display: inline-block;
-} */
-
 .container a:hover {
     color: rgb(97, 97, 255);
 }

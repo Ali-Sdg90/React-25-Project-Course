@@ -93,7 +93,7 @@ const Home = () => {
 
     return (
         <div className={Style.container}>
-            <NavBar />
+            <NavBar navMode={"Home"} />
 
             {siteData.isLoading ? (
                 <h1>Loading...</h1>

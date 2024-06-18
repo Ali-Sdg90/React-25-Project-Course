@@ -2,6 +2,8 @@ import React, { useContext, useMemo } from "react";
 import NavBar from "../NavBar";
 import { useParams } from "react-router-dom";
 import useFetchHook from "../../P13/useFetchHook";
+import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
 
 import Style from "./Details.module.css";
 import { appContext } from "../../../Context/AppContext";
@@ -9,7 +11,7 @@ import { appContext } from "../../../Context/AppContext";
 const Details = () => {
     const { id } = useParams();
 
-    const { cookingData } = useContext(appContext);
+    const { cookingData, favRecipe, setFavRecipe } = useContext(appContext);
 
     const option = useMemo(() => ({}), []);
 
@@ -18,9 +20,30 @@ const Details = () => {
         options: option,
     });
 
+    const preventDefaultBehaviorOfLink = (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+    };
+
+    const starClickHandler = (item) => {
+        // const index = Object.keys(favRecipe).indexOf(item.recipe_id);
+
+        if (!(item.recipe_id in favRecipe)) {
+            setFavRecipe((prevState) => ({
+                ...prevState,
+                [item.recipe_id]: item,
+            }));
+        } else {
+            const newFavRecipe = JSON.parse(JSON.stringify(favRecipe));
+
+            delete newFavRecipe[item.recipe_id];
+            setFavRecipe(newFavRecipe);
+        }
+    };
+
     return (
         <div className={Style.container}>
-            <NavBar />
+            <NavBar navMode={"details"} />
 
             {isLoading ? (
                 <h1>Loading...</h1>
@@ -31,7 +54,6 @@ const Details = () => {
                     {console.log(data)}
 
                     <h1>{data.recipe.title}</h1>
-                    {/* <img src={data.recipe.image_url} alt="item image" /> */}
                     <img
                         src={
                             cookingData && cookingData[data.recipe.recipe_id]
@@ -64,6 +86,28 @@ const Details = () => {
                                 <li key={index}>{item}</li>
                             ))}
                         </ol>
+                    </div>
+
+                    <div>
+                        {Object.keys(favRecipe).includes(
+                            data.recipe.recipe_id
+                        ) ? (
+                            <FaStar
+                                className={`${Style.star} ${Style.starYellow}`}
+                                onClick={(event) => {
+                                    preventDefaultBehaviorOfLink(event);
+                                    starClickHandler(data.recipe);
+                                }}
+                            />
+                        ) : (
+                            <CiStar
+                                className={`${Style.star} ${Style.starBlack}`}
+                                onClick={(event) => {
+                                    preventDefaultBehaviorOfLink(event);
+                                    starClickHandler(data.recipe);
+                                }}
+                            />
+                        )}
                     </div>
                 </div>
             )}

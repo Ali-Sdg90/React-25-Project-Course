@@ -87,13 +87,6 @@ const Card = ({ item }) => {
                             }}
                         />
                     )}
-                    {/* <FaStar
-                                        className={`${Style.star} ${Style.starYellow}`}
-                                        onClick={(event) => {
-                                            preventDefaultBehaviorOfLink(event);
-                                            starClickHandler(item);
-                                        }}
-                                    /> */}
                 </div>
             </Link>
         </div>
