@@ -13,3 +13,12 @@
 .container button:active {
     background-color: #2f2f2f;
 }
+
+.container .favCounter {
+    background-color: green;
+    width: 16px;
+    height: 15px;
+    border-radius: 50%;
+    padding-top: 1px;
+    display: inline-block;
+}

@@ -2,10 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cookingContext } from "./Context/Context";
 import Style from "./NavBar.module.css";
+import { appContext } from "../../Context/AppContext";
 
 const NavBar = ({ navMode }) => {
     const { search, setSearch, searchFavorite, setSearchFavorite } =
         useContext(cookingContext);
+    const { favRecipe } = useContext(appContext);
 
     return (
         <div className={Style.container}>
@@ -15,7 +17,12 @@ const NavBar = ({ navMode }) => {
                         <button>Recipes Home Page</button>
                     </Link>
                     <Link to={"/React-25-Project-Course/cooking-site/favorite"}>
-                        <button>Favorite Recipes</button>
+                        <button>
+                            Favorite Recipes{" "}
+                            <span className={Style.favCounter}>
+                                {Object.keys(favRecipe).length}
+                            </span>
+                        </button>
                     </Link>
                 </div>
 

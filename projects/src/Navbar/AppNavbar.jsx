@@ -6,6 +6,7 @@ const AppNavbar = () => {
     const location = useLocation();
 
     const [isInCookingSite, setIsInCookingSite] = useState(false);
+    const [profileImg, setProfileImg] = useState("");
 
     useEffect(() => {
         if (location.pathname.includes("cooking-site")) {
@@ -14,6 +15,30 @@ const AppNavbar = () => {
             setIsInCookingSite(false);
         }
     }, [location.pathname]);
+
+    useEffect(() => {
+        setProfileImg(getRandomProfileImg);
+    }, []);
+
+    const changeImg = () => {
+        setProfileImg(getRandomProfileImg);
+    };
+
+    const getRandomProfileImg = () => {
+        const isMale = !!Math.floor(Math.random() * 2);
+
+        const randomNumber = Math.floor(Math.random() * 78);
+
+        console.log(
+            `https://xsgames.co/randomusers/assets/avatars/${
+                isMale ? "male" : "female"
+            }/${randomNumber}.jpg`
+        );
+
+        return `https://xsgames.co/randomusers/assets/avatars/${
+            isMale ? "male" : "female"
+        }/${randomNumber}.jpg`;
+    };
 
     return (
         <span className={Style.container}>
@@ -32,7 +57,13 @@ const AppNavbar = () => {
             <h1>- React 25 Project Course -</h1>
 
             <div className={Style.rightSection}>
-                <div>IMG</div>
+                <img
+                    src={profileImg}
+                    className={Style.img}
+                    alt="Profile image"
+                    title="Click to Change"
+                    onClick={changeImg}
+                />
             </div>
         </span>
     );

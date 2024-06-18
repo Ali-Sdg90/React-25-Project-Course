@@ -18,6 +18,7 @@ const Favorite = () => {
         setSearchedRecipe(searchResultsID.map((key) => favRecipe[key]));
 
         // console.log("searchResults", searchResultsID);
+        // console.log("favRecipe", favRecipe);
     }, [searchFavorite, favRecipe]);
 
     useEffect(() => {

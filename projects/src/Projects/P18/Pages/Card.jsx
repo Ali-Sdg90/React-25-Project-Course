@@ -6,8 +6,7 @@ import Style from "./Home.module.css";
 import { appContext } from "../../../Context/AppContext";
 
 const Card = ({ item }) => {
-    const { cookingData, setCookingData, favRecipe, setFavRecipe } =
-        useContext(appContext);
+    const { cookingData, favRecipe, setFavRecipe } = useContext(appContext);
 
     const preventDefaultBehaviorOfLink = (event) => {
         event.stopPropagation();
@@ -37,7 +36,6 @@ const Card = ({ item }) => {
                 to={`/React-25-Project-Course/cooking-site/details/${item.recipe_id}`}
             >
                 <div className={Style.card}>
-                    {/* {console.log(cookingData[item.recipe_id])} */}
                     <img
                         src={
                             cookingData && cookingData[item.recipe_id]
@@ -51,6 +49,13 @@ const Card = ({ item }) => {
                                   })()
                         }
                         alt="item image"
+                        style={{
+                            background: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(${
+                                cookingData && cookingData[item.recipe_id]
+                                    ? cookingData[item.recipe_id]
+                                    : item.image_url
+                            })`,
+                        }}
                     />
                     <div style={{ padding: " 5px 10px" }}>
                         <div>

@@ -30,3 +30,15 @@
 .container button:hover {
     background-color: #3c3c3c;
 }
+
+.container .img {
+    border: 6px solid rgb(22, 22, 22);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

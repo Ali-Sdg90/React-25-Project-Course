@@ -9,8 +9,7 @@ import Card from "./Card";
 const Home = () => {
     const { search } = useContext(cookingContext);
 
-    const { cookingData, setCookingData, favRecipe, setFavRecipe } =
-        useContext(appContext);
+    const { cookingData, setCookingData } = useContext(appContext);
 
     const option = useMemo(() => ({}), []);
 
@@ -82,10 +81,6 @@ const Home = () => {
         }
         // }
     }, [dataFetched, isLoadingFetched, errorMsgFetched]);
-
-    useEffect(() => {
-        console.log("favRecipe", favRecipe);
-    }, [favRecipe]);
 
     useEffect(() => {
         // console.log("cookingData", cookingData);

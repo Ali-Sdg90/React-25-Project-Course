@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Details from "./Pages/Details";
 import Favorite from "./Pages/Favorite";
 import Context from "./Context/Context";
+import useLocalStorage from "../P8/localStorage";
+import { appContext } from "../../Context/AppContext";
 
 const CookingSite = () => {
+    const { favRecipe, setFavRecipe } = useContext(appContext);
+
+    const [localRecipes, setLocalRecipes] = useLocalStorage("Fav_Recipes", {});
+
+    useEffect(() => {
+        if (localRecipes && Object.keys(localRecipes).length > 0) {
+            setFavRecipe(localRecipes);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (favRecipe) {
+            setLocalRecipes(favRecipe);
+        }
+    }, [favRecipe]);
+
     return (
         <div>
             <Context>
