@@ -29,11 +29,11 @@ const AppNavbar = () => {
 
         const randomNumber = Math.floor(Math.random() * 78);
 
-        console.log(
-            `https://xsgames.co/randomusers/assets/avatars/${
-                isMale ? "male" : "female"
-            }/${randomNumber}.jpg`
-        );
+        // console.log(
+        //     `https://xsgames.co/randomusers/assets/avatars/${
+        //         isMale ? "male" : "female"
+        //     }/${randomNumber}.jpg`
+        // );
 
         return `https://xsgames.co/randomusers/assets/avatars/${
             isMale ? "male" : "female"

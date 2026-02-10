@@ -46,7 +46,7 @@ const P10 = () => {
                     <h1>Error: {data.errorMsg.message}</h1>
                 ) : data.data.id ? (
                     <div className={Style.dataContainer}>
-                        {console.log(data)}
+                        {/* {console.log(data)} */}
                         <img src={data.data.avatar_url} />
                         <div>Name: {data.data.name ? data.data.name : "-"}</div>
                         <div>

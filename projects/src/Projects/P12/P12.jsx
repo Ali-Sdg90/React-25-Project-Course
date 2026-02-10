@@ -12,7 +12,7 @@ const P12 = () => {
     });
 
     const clickBox = (row, column) => {
-        console.log(row, column);
+        // console.log(row, column);
 
         setGameBoxes((prevState) => {
             const newMap = JSON.parse(JSON.stringify(prevState));

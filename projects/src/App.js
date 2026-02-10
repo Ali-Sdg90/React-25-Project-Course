@@ -21,6 +21,7 @@ import P18 from "./Projects/P18/P18";
 import CookingSite from "./Projects/P18/CookingSite";
 import AppNavbar from "./Navbar/AppNavbar";
 import P19 from "./Projects/P19/P19";
+import P20 from "./Projects/P20/P20";
 
 const App = () => {
     return (
@@ -50,6 +51,7 @@ const App = () => {
                             <P17 />
                             <P18 />
                             <P19 />
+                            <P20 />
                         </>
                     }
                 />

@@ -18,7 +18,7 @@ const P5 = () => {
             }
         });
 
-        console.log(isDuplicate);
+        // console.log(isDuplicate);
 
         if (!isDuplicate) {
             const response = await fetch(BASE_URL + pageNO);

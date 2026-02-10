@@ -9,7 +9,7 @@ const useResizeWinHook = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            console.log("CHANGE");
+            // console.log("CHANGE");
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight,

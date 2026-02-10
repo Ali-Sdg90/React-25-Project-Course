@@ -26,6 +26,7 @@ const P16 = () => {
                                     return (
                                         <button
                                             onClick={() => goToSection(index)}
+                                            key={index}
                                         >
                                             {episode.name}
                                         </button>
@@ -46,6 +47,7 @@ const P16 = () => {
                                         ref={(el) =>
                                             (sectionRefs.current[index] = el)
                                         }
+                                        key={index}
                                     >
                                         <div>{episode.name}</div>
                                         <div>{episode.date}</div>

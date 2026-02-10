@@ -7,8 +7,8 @@ const Items = () => {
     const [multipleSelectItem, setMultipleSelectItem] = useState(false);
 
     const itemClickHandler = (id) => {
-        console.log("id", id);
-        console.log("itemSelected", itemSelected);
+        // console.log("id", id);
+        // console.log("itemSelected", itemSelected);
 
         const index = itemSelected.indexOf(id);
 
