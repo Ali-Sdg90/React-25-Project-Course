@@ -37,6 +37,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "eslint src --ext .js,.jsx --format stylish",
+    "lint:fix": "eslint src --ext .js,.jsx --format stylish --fix",
     "prepare": "husky"
   },
   "author": {
@@ -57,14 +59,21 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@commitlint/cli": "^17.6.0",
+    "@commitlint/config-conventional": "^17.6.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.5",
     "cross-env": "^7.0.3",
+    "@eslint/js": "^9.35.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "gh-pages": "^6.1.1",
-    "semantic-release": "^25.0.3",
-    "@commitlint/cli": "^17.6.0",
-    "@commitlint/config-conventional": "^17.6.0"
+    "semantic-release": "^25.0.3"
   },
   "publishConfig": {
     "branch": "gh-pages"

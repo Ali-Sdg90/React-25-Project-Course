@@ -70,6 +70,7 @@ const Card = ({ item }) => {
                                 onClick={(event) =>
                                     preventDefaultBehaviorOfLink(event)
                                 }
+                                rel="noreferrer"
                             >
                                 {item.publisher}
                             </a>

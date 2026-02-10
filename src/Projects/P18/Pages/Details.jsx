@@ -71,7 +71,11 @@ const Details = () => {
 
                     <h4>
                         Publisher:{" "}
-                        <a href={data.recipe.source_url} target="_blank">
+                        <a
+                            href={data.recipe.source_url}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             {data.recipe.publisher}
                         </a>
                     </h4>

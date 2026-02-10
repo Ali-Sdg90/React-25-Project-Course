@@ -61,7 +61,7 @@ const P9 = () => {
 
     useEffect(() => {
         setTabOutput(data.data[selectedTab]);
-    }, [selectedTab]);
+    }, [selectedTab, data]);
 
     return (
         <div className={Style.container}>

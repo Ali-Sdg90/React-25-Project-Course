@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const object1 = {
     count: 28,
     recipes: [

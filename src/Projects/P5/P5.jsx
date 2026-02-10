@@ -9,6 +9,7 @@ const P5 = () => {
     const [pageNumber, setPageNumber] = useState(1);
     const [numberOfPages, setNumberOfPages] = useState(1);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getData = async (pageNO) => {
         let isDuplicate = false;
 
@@ -60,7 +61,7 @@ const P5 = () => {
 
     useEffect(() => {
         getData(pageNumber);
-    }, [pageNumber]);
+    }, [pageNumber, getData]);
 
     return (
         <div className={Style.container}>

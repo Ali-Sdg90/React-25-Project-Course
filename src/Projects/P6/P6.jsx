@@ -13,6 +13,7 @@ const P6 = () => {
         }));
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const createSideMenu = (items, dept, idPrefix) => {
         return items.map((item, index) => {
             const id = `${idPrefix}-${index}`;
@@ -51,7 +52,7 @@ const P6 = () => {
 
     useEffect(() => {
         setHtmlElements(createSideMenu(sideMenu, 0, "0"));
-    }, [expandedItems]);
+    }, [expandedItems, createSideMenu]);
 
     return <div>{htmlElements}</div>;
 };

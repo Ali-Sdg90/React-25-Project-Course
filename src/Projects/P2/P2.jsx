@@ -10,6 +10,7 @@ const P2 = () => {
         return random.toString();
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const CreateRandomHEXColor = () => {
         const HEXChars = [
             "0",
@@ -49,7 +50,7 @@ const P2 = () => {
 
     useEffect(() => {
         CreateRandomHEXColor();
-    }, []);
+    }, [CreateRandomHEXColor]);
 
     return (
         <div className={Style.container}>

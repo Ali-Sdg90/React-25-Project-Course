@@ -60,7 +60,11 @@ const P10 = () => {
                                 ? data.data.public_repos
                                 : "0"}
                         </div>
-                        <a href={data.data.html_url} target="_blank">
+                        <a
+                            href={data.data.html_url}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <button>Link to GitHub Profile</button>
                         </a>
                     </div>

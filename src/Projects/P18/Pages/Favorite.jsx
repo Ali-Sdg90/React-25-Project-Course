@@ -43,11 +43,11 @@ const Favorite = () => {
                     ))
                 ) : Object.keys(favRecipe).length ? (
                     <h1>
-                        No Search Result for "{searchFavorite}" in Your
-                        Favorites!
+                        No Search Result for &quot;{searchFavorite}&quot; in
+                        Your Favorites!
                     </h1>
                 ) : (
-                    <h1>You Don't have any Favorites!</h1>
+                    <h1>You Don&apos;t have any Favorites!</h1>
                 )}
             </div>
         </div>

@@ -80,7 +80,13 @@ const Home = () => {
             fetchImages();
         }
         // }
-    }, [dataFetched, isLoadingFetched, errorMsgFetched]);
+    }, [
+        dataFetched,
+        isLoadingFetched,
+        errorMsgFetched,
+        cookingData,
+        setCookingData,
+    ]);
 
     useEffect(() => {
         // console.log("cookingData", cookingData);

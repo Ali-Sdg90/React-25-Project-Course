@@ -29,16 +29,17 @@ const P12 = () => {
         if (i !== "Draw") {
             setEndGame({
                 isGameOver: true,
-                endGameText: `${!!i ? "O" : "X"} Won!`,
+                endGameText: `${i ? "O" : "X"} Won!`,
             });
         } else {
             setEndGame({
                 isGameOver: true,
-                endGameText: `Draw!`,
+                endGameText: "Draw!",
             });
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const endGameChecker = () => {
         let score = 0;
         for (let i = 0; i < 2; i++) {
@@ -105,7 +106,7 @@ const P12 = () => {
 
     useEffect(() => {
         endGameChecker();
-    }, [gameBoxes]);
+    }, [gameBoxes, endGameChecker]);
 
     return (
         <div className={Style.container}>

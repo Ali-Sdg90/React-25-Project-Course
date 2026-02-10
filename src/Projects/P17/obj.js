@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 const obj = {
     coord: {
         lon: -74.006,

@@ -14,7 +14,7 @@ const P11 = () => {
         setSuggestedNames(
             data.data.filter((item) => item.indexOf(inputName) !== -1)
         );
-    }, [inputName]);
+    }, [inputName, data.data]);
 
     useEffect(() => {
         const getData = async () => {
@@ -49,8 +49,8 @@ const P11 = () => {
             />
             {inputName && (
                 <div>
-                    {suggestedNames.map((item) => {
-                        return <div>{item}</div>;
+                    {suggestedNames.map((item, index) => {
+                        return <div key={index}>{item}</div>;
                     })}
                 </div>
             )}

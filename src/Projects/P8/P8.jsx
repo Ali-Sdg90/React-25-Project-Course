@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useLocalStorage from "./localStorage";
 import Style from "./P8.module.css";
 

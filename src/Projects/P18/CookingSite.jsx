@@ -16,13 +16,13 @@ const CookingSite = () => {
         if (localRecipes && Object.keys(localRecipes).length > 0) {
             setFavRecipe(localRecipes);
         }
-    }, []);
+    }, [localRecipes, setFavRecipe]);
 
     useEffect(() => {
         if (favRecipe) {
             setLocalRecipes(favRecipe);
         }
-    }, [favRecipe]);
+    }, [favRecipe, setLocalRecipes]);
 
     return (
         <div>

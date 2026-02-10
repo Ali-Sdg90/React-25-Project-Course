@@ -1,6 +1,6 @@
 import React from "react";
-import A1 from "./Attempt1/A1";
-import A2 from "./Attempt2/A2";
+// import A1 from "./Attempt1/A1";
+// import A2 from "./Attempt2/A2";
 import A3 from "./Attempt3/A3";
 
 const P19 = () => {

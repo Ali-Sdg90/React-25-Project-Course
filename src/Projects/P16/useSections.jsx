@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import useFetchHook from "../P13/useFetchHook";
 
 const useSections = () => {
