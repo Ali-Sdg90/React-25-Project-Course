@@ -39,12 +39,6 @@
     "format:check": "prettier --check .",
     "prepare": "husky"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "author": {
     "name": "Ali Sadeghi",
     "url": "https://github.com/Ali-Sdg90"
