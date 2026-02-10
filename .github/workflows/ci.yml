@@ -28,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
+    outputs:
+      released: ${{ steps.set_released.outputs.released }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,6 +57,10 @@ jobs:
           name: react-build
           path: build/
           if-no-files-found: error
+
+      - name: Set released output
+        id: set_released
+        run: echo "released=true" >> $GITHUB_ENV
 
   release:
     name: 🚀 Version & Release
