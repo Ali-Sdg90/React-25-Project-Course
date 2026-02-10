@@ -15,7 +15,9 @@
 
 .container h1 {
     font-size: 40px;
-    text-shadow: 3px 0 rgba(98, 0, 255, 0.25), -3px 0 rgba(255, 0, 0, 0.25);
+    text-shadow:
+        3px 0 rgba(98, 0, 255, 0.25),
+        -3px 0 rgba(255, 0, 0, 0.25);
 }
 
 .container button {

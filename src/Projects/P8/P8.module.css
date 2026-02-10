@@ -1,13 +1,17 @@
 .container {
     background-color: black;
     color: white;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+        background-color 0.2s,
+        color 0.2s;
 }
 
 .container button {
     background-color: white;
     color: black;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+        background-color 0.2s,
+        color 0.2s;
     cursor: pointer;
 }
 
@@ -21,10 +25,10 @@
     color: white;
 }
 
-.container h1{
+.container h1 {
     margin: 5px 0 0;
 }
 
-.container pre{
+.container pre {
     margin: 5px 5px 10px;
 }

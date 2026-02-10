@@ -11,7 +11,7 @@ const P20 = () => {
         const getData = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:5000/proxy/cloudflare",
+                    "http://localhost:5000/proxy/cloudflare"
                 );
 
                 setGetDataState("success");

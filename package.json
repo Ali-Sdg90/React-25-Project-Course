@@ -3,6 +3,7 @@
   "name": "projects",
   "version": "0.1.0",
   "private": true,
+  "main": "./src/index.jsx",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,7 +13,9 @@
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
+    "husky": "^9.1.7",
     "leaflet": "^1.9.4",
+    "prettier": "^3.8.1",
     "react": "^18.3.1",
     "react-apexcharts": "^1.9.0",
     "react-dom": "^18.3.1",
@@ -31,13 +34,20 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "author": {
+    "name": "Ali Sadeghi",
+    "url": "https://github.com/Ali-Sdg90"
   },
   "browserslist": {
     "production": [
@@ -52,10 +62,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.5",
+    "cross-env": "^7.0.3",
     "gh-pages": "^6.1.1",
-    "semantic-release": "^25.0.3"
+    "semantic-release": "^25.0.3",
+    "@commitlint/cli": "^17.6.0",
+    "@commitlint/config-conventional": "^17.6.0"
+  },
+  "publishConfig": {
+    "branch": "gh-pages"
   }
 }

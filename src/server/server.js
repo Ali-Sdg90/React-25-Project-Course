@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../../../.env' });
+require("dotenv").config({ path: "../../../.env" });
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -21,7 +21,7 @@ app.get("/proxy/cloudflare", async (_req, res) => {
                     location: "IR",
                     dateRange: "7d",
                 },
-            },
+            }
         );
         res.json(response.data);
     } catch (error) {
