@@ -60,7 +60,7 @@ jobs:
 
       - name: Set released output
         id: set_released
-        run: echo "released=true" >> $GITHUB_ENV
+        run: echo "released=true" >> $GITHUB_OUTPUT
 
   release:
     name: 🚀 Version & Release
