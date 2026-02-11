@@ -1,7 +1,7 @@
 {
   "homepage": "https://ali-sdg90.github.io/React-25-Project-Course",
   "name": "projects",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "main": "./src/index.jsx",
   "dependencies": {
